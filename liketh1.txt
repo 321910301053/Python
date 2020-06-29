@@ -1,0 +1,77 @@
+#1
+for i in range(1,100):
+    if i%3==0 and i%5==0:
+        print("FIZZBUZZ")
+    elif i%5==0:
+        print("BUZZ")
+    elif i%3==0:
+        print("FIZZ")
+    else:
+        print("",i)
+#2
+list = [1,1,1,1,1,1,2,3,4,4,5,1,2]
+i = 0
+dope = False
+
+while i < len(list)-1:
+    if list[i] == list[i+1]:
+        del list[i]
+        dope = True
+    elif dope:
+        del list[i]
+        dope = False
+    else:
+        i += 1
+print(list)
+
+#3
+lst = [] 
+n = int(input("Enter number of elements : ")) 
+for i in range(0, n): 
+    ele = int(input("enter your elements:")) 
+    lst.append(ele)  
+print("your previous list:",lst) 
+
+
+lst2 = [] 
+
+for x in lst: 
+    if x not in lst2: 
+        lst2.append(x) 
+print("your new list:",lst2)
+
+#4
+def check():
+    a=int(input("enter value to check:"))
+    b=int(input("enter the minimum range:"))
+    c=int(input("enter the maximum range:"))
+    j=0
+    for i in range(b,c+1):
+        if(i==a):
+            j=1
+            break
+        else:
+            j=0
+          
+    if(j==1):
+        print("Yes..its in!")
+    else:
+        print("Nope..not in range!")
+
+#5
+def cnt():
+    
+    s1=input("enter a string :").strip()
+    count=0
+    countu=0
+    for i in s1:
+        if(i.islower()):
+            count+=1
+            
+        elif(i.isupper()):
+            countu+=1
+            
+        else:
+            pass
+    print("THE NUMBER OF UPPER CASES ARE :",countu)
+    print("THE NUMBER OF LOWER CASSES ARE: ",count)
