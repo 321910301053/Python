@@ -1,39 +1,42 @@
-#1
-def pf():
-    a=input("enter your string :")
-    c=a.split()
-    d=[x for x in c if x[0]=="s"]  
-    print(d)
-pf()
-enter your string :print only the words that ends with s in the sentence
-['s', 'sentence']
+#longest word
+def longest_word(filename):
+    with open(filename, 'r') as infile:
+              words = infile.read().split()
+    max_len = len(max(words, key=len))
+    return [word for word in words if len(word) == max_len]
 
-#2
-for x in range(0,11,2):
-    print(x)
-0
-2
-4
-6
-8
-10
+print(longest_word('test.txt'))
 
-#3
-a=[x for x in range(51) if x%3==0]
-print(a)
-[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48]
+#n of lines
+def file_lengthy(fname):
+        with open(fname) as f:
+                for i, l in enumerate(f):
+                        pass
+        return i + 1
+print("Number of lines in the file: ",file_lengthy("test.txt"))
 
-#4
-def po():
-    a=input("enter your string :")
-    c=a.split()
-    d=[x for x in c if len(x)%2==0]
-    print(d)
-po()
+#read-file text
+def file_read(fname):
+        txt = open(fname)
+        print(txt.read())
 
-#5
-def pk():
-    a=input("enter your string :")
-    c=a.split()
-    d=[x[0] for x in c ]
-    print(d)
+file_read('test.txt')
+
+#text 2 lst
+def file_read(fname):
+        with open(fname) as f:
+                   
+                content_list = f.readlines()
+                print(content_list)
+
+file_read(\'test.txt\')
+
+#text-append
+def file_read(fname):
+        from itertools import islice
+        with open(fname, "w") as myfile:
+                myfile.write("Python Exercises\n")
+                myfile.write("Java Exercises")
+        txt = open(fname)
+        print(txt.read())
+file_read('abc.txt')
